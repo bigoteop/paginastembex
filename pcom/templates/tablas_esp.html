@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            Código
+          </div>
+        <div class="col">
+            Nombre
+          </div>
+    </div>
+
+
+    {% for emb in g.especies%}
+    <div class="row">
+        <div class="col">
+            {{emb.cod}}
+          </div>
+        <div class="col">
+            {{emb.nombre}}
+          </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
+
+<div class="container">
+    <h2>Crear Variedad</h2>
+    
+    <form class="form-inline" method="POST">
+      <div class="form-group">
+        <label for="email">Código:</label>
+        <input type="text" class="form-control"  name="esp_code">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Nombre:</label>
+        <input type="text" class="form-control"  name="esp_name">
+      </div>
+      <button type="submit" class="btn btn-light">Crear</button>
+    </form>
+  </div>
+
+  
+{% endblock%}

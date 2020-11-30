@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<p>EMBARQUES MARÍTIMOS 2020</p>
+<ul style="list-style-image: url({{url_for('static', filename='img/iconotxt.png')}})">
+    <li>
+      <a href="{{ url_for('static',filename='files/2020/EMMA_MAERKS_2020.txt')}}" download>EMMA_MAERKS_2020</a>
+    </li>
+    <li>
+        <a href="{{ url_for('static',filename='files/2020/CMA_CGM_MARCO_POLO_2020.txt')}}" download>CMA_CGM_MARCO_POLO_2020</a>
+      </li>
+      <li>
+        <a href="{{ url_for('static',filename='files/2020/HMM_ALGECIRAS_2020.txt')}}" download>HMM_ALGECIRAS_2020</a>
+      </li>
+      <li>
+        <a href="{{ url_for('static',filename='files/2020/BOKA_VANGUARD_2020.txt')}}" download>BOKA_VANGUARD_2020</a>
+      </li>
+      <li>
+        <a href="{{ url_for('static',filename='files/2020/OOCL_HONG_KONG_2020.txt')}}" download>OOCL_HONG_KONG_2020</a>
+      </li>
+      <li>
+        <a href="{{ url_for('static',filename='files/2020/YACHT_EXPRESS_2020.txt')}}" download>YACHT_EXPRESS_2020</a>
+      </li>
+  </ul>
+  <ul style="list-style-image: url({{url_for('static', filename='img/iconoexcel.png')}})">
+    <li>
+        <a href="{{ url_for('static',filename='files/2020/EMMA_MAERKS_2020.xls')}}" download>EMMA_MAERKS_2020</a>
+    </li>
+    <li>
+        <a href="{{ url_for('static',filename='files/2020/CMA_CGM_MARCO_POLO_2020.xls')}}" download>CMA_CGM_MARCO_POLO_2020</a>
+    </li>
+    <li>
+        <a href="{{ url_for('static',filename='files/2020/HMM_ALGECIRAS_2020.xls')}}" download>HMM_ALGECIRAS_2020</a>
+    </li>
+    <li>
+        <a href="{{ url_for('static',filename='files/2020/BOKA_VANGUARD_2020.xls')}}" download>BOKA_VANGUARD_2020</a>
+    </li>
+    <li>
+        <a href="{{ url_for('static',filename='files/2020/OOCL_HONG_KONG_2020.xls')}}" download>OOCL_HONG_KONG_2020</a>
+    </li>
+    <li>
+        <a href="{{ url_for('static',filename='files/2020/YACHT_EXPRESS_2020.xls')}}" download>YACHT_EXPRESS_2020</a>
+    </li>
+  </ul>
+<ul style="list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/treehouse-marker.png)">
+  <li>
+    <a href="{{ url_for('mar')}}">ATRÁS</a>
+  </li>
+</ul>
+
+{% endblock%}

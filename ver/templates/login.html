@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Stembex</title>
+    <!-- BOOTSTRAP 4 CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>  
+  
+    <div class="container p-4" style="margin: auto;
+    width: 50%;
+    top: 50%;
+    border: 3px solid lightblue;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);">
+
+      <img src="{{url_for('static', filename='img/logoverfrut.jpg')}}" />
+      <h1>Login</h1>
+      <form method="post">
+          <label for="fname">Usuario:</label>
+          <input type="text" id="fname" name="username"><br><br>
+          <label for="lname">Contraseña:</label>
+          <input type="password" id="lname" name="password"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+            
+            {{ message }}
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>

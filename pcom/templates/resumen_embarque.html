@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+
+
+
+{% block content %}
+<div class="container">
+{% if g.nave %}
+<h2>Resumen de embarque para la nave: {{g.nave_nombre}}</h2>
+  {% for i in g.nave %}
+      <p>{{i}}</p>
+  {% endfor %}
+
+{% elif g.show_resumen %}
+<div class="alert alert-danger" role="alert">
+  La nave ingresada no existe
+</div>
+{% endif %}
+</div>
+
+
+<div class="container">
+    <h2>Consultar resumen de embarque</h2>
+    
+    <form class="form-inline" method="POST">
+      <div class="form-group">
+        <label for="email">Nombre nave:</label>
+        <input type="text" class="form-control"  name="nombre_nave">
+      </div>
+      <button type="submit" class="btn btn-light">Consultar</button>
+    </form>
+  </div>
+
+
+{% endblock%}

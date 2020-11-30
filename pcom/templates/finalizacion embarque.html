@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+
+
+
+{% block content %}
+<div class="container">
+{% if g.fin_nave_nombre %}
+
+  {%if g.fin_nave_nombre != 'null'%}
+  <div class="alert alert-success" role="alert">
+    Aviso de finalización enviado.
+  </div>
+  {% else %}
+  <div class="alert alert-danger" role="alert">
+    La nave ingresada no existe
+  </div>
+  {% endif %}
+
+{% endif %}
+
+</div>
+
+
+<div class="container">
+    <h2>Dar aviso de finalizaión de embarque</h2>
+    
+    <form class="form-inline" method="POST">
+      <div class="form-group">
+        <label for="email">Nombre nave:</label>
+        <input type="text" class="form-control"  name="nombre_nave">
+      </div>
+      <button type="submit" class="btn btn-light">Finalizar Embarque</button>
+    </form>
+  </div>
+
+
+{% endblock%}

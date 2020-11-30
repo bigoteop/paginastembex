@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<p>EMBARQUES</p>
+<ul style="list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/treehouse-marker.png);">
+  <li>
+    <a href="{{ url_for('forb')}}">AÉREO</a>
+  </li>
+  <li>
+    <a href="{{ url_for('mar')}}">MARÍTIMO
+    </a>
+  </li>
+  <li>
+    <a href="{{ url_for('forb')}}">TERRESTRE</a>
+  </li>
+  <li>
+    <a href="{{ url_for('home')}}">ATRÁS</a>
+  </li>
+</ul>
+
+{% endblock%}

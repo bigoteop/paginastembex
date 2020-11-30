@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+{% if g.embarcarcontenedor_code == 0 %}
+<div class="alert alert-danger" role="alert">
+    Contenedor no encontrado
+</div>
+{% elif g.embarcarcontenedor_code == 1 %}
+<div class="alert alert-success" role="alert">
+    Contenedor embarcado
+</div>
+{% elif g.embarcarcontenedor_code == 2 %}
+<div class="alert alert-success" role="alert">
+  Contenedor embarcado
+</div>
+{% elif g.embarcarcontenedor_code == 3 %}
+<div class="alert alert-danger" role="alert">
+    EL contenedor ya ha sido embarcado
+  </div>
+{% else %}
+
+{% endif %}
+</div>
+
+<div class="container">
+    <h2>Embarcar Contenedor</h2>
+    
+    <form class="form-inline" method="POST">
+      <div class="form-group">
+        <label for="email">Nave:</label>
+        <input type="text" class="form-control"  name="nombre_nave">
+      </div>
+      <div class="form-group">
+        <label for="email">Número contenedor:</label>
+        <input type="text" class="form-control"  name="numero_cont">
+      </div>
+      <button type="submit" class="btn btn-light">Embarcar</button>
+    </form>
+  </div>
+
+
+
+{% endblock%}

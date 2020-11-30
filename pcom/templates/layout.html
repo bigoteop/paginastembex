@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Stembex</title>
+    <!-- BOOTSTRAP 4 CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+
+  <a href="{{ url_for('home') }}">
+  <img src="{{url_for('static', filename='img/logostembex.png')}}" /></a>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tablas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ url_for('tablas_emb')}}">Embalajes</a>
+            <a class="dropdown-item" href="{{ url_for('tablas_esp')}}">Especies</a>
+            <a class="dropdown-item" href="{{ url_for('tablas_var')}}">Variedades</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Despachos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ url_for('forb')}}">Ingreso Manual</a>
+            <a class="dropdown-item" href="{{ url_for('txt_upload')}}">Ingreso por texto</a>
+            <a class="dropdown-item" href="{{ url_for('resumen_guia')}}">Resumen Guía</a>
+            <a class="dropdown-item" href="{{ url_for('emb_contenedor')}}">Embarcar contenedor</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Embarques
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ url_for('forb')}}">Consultar DUS</a>
+            <a class="dropdown-item" href="{{ url_for('forb')}}">Consultar BLS</a>
+            <a class="dropdown-item" href="{{ url_for('resumen_embarque')}}">Resumen de Embarque</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Documentos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ url_for('forb')}}">Imprimir BL</a>
+            <a class="dropdown-item" href="{{ url_for('forb')}}">Crear nuevo viaje</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Avisos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ url_for('forb')}}">Aviso de creación de viaje</a>
+            <a class="dropdown-item" href="{{ url_for('finalizacion_embarque')}}">Finalización de embarque</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('login')}}">Logout</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+    <div class="container p-4">
+      {% block content %}
+      {% endblock%}
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>

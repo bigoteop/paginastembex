@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<p>OPERACIONES</p>
+<ul style="list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/treehouse-marker.png);">
+  <li>
+    <a href="{{ url_for('forb')}}">CENTRAL</a>
+  </li>
+  <li>
+    <a href="{{ url_for('forb')}}">DIGITACIÓN
+    </a>
+  </li>
+  <li>
+    <a href="{{ url_for('emb')}}">EMBARQUES</a>
+  </li>
+  <li>
+    <a href="{{ url_for('forb')}}">FRUTA</a>
+  </li>
+  <li>
+    <a href="{{ url_for('forb')}}">PACKING</a>
+  </li>
+  <li>
+    <a href="{{ url_for('forb')}}">GESTIÓN RRHH</a>
+  </li>
+  <li>
+    <a href="{{ url_for('forb')}}">ACCESO ADMIN</a>
+  </li>
+</ul>
+
+{% endblock%}

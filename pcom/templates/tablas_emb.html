@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            Código
+          </div>
+        <div class="col">
+            Tipo
+          </div>
+        <div class="col">
+            Peso Neto
+          </div>
+        <div class="col">
+            Peso Bruto
+          </div>
+    </div>
+
+
+    {% for emb in g.embalajes%}
+    <div class="row">
+        <div class="col">
+            {{emb.cod}}
+          </div>
+        <div class="col">
+            {{emb.tip}}
+          </div>
+        <div class="col">
+            {{emb.net}}
+          </div>
+        <div class="col">
+            {{emb.bru}}
+          </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
+
+<div class="container">
+    <h2>Crear Embalaje</h2>
+    
+    <form class="form-inline" method="POST">
+      <div class="form-group">
+        <label for="email">Código:</label>
+        <input type="text" class="form-control"  name="ce_codigo">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Peso Neto:</label>
+        <input type="text" class="form-control"  name="ce_pneto">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Peso Bruto:</label>
+        <input type="text" class="form-control" name="ce_pbruto">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Tipo:</label>
+        <input type="text" class="form-control" name="ce_tipo">
+      </div>
+      <button type="submit" class="btn btn-light">Crear</button>
+    </form>
+  </div>
+
+  
+{% endblock%}

@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class='container'>
+    {% if g.guia %}
+    <div class="row">
+        <div class="col">
+            Número de guía
+          </div>
+        <div class="col">
+            {{g.guia.numero}}
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Número de contenedor
+          </div>
+        <div class="col">
+            {{g.guia.contenedor}}
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Especie
+          </div>
+        <div class="col">
+            {{g.guia.especie}}
+          </div>
+        <div class="col">
+            {{g.guia.variedad}}
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Cajas
+          </div>
+        <div class="col">
+            {{g.guia.cajas}} cajas
+          </div>
+        <div class="col">
+            {{g.guia.pallets}} pallets
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Embalaje: {{g.guia.embalaje}}
+          </div>
+        <div class="col">
+            {{g.guia.neto}} Total neto
+          </div>
+        <div class="col">
+            {{g.guia.bruto}} Total bruto
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Chofer
+          </div>
+        <div class="col">
+            {{g.guia.nombre_chofer}}
+          </div>
+        <div class="col">
+            {{g.guia.tel_chofer}} 
+          </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            {{g.guia.nave}}
+          </div>
+        <div class="col">
+            {{g.guia.puerto}} 
+          </div>
+        <div class="col">
+            {{g.guia.destino}}
+          </div>
+    </div>
+
+
+
+
+
+
+       
+
+
+
+
+
+
+    {% endif %}
+
+</div>
+
+<div class="container">
+    <h2>Consultar Guia</h2>
+    
+    <form class="form-inline" method="POST">
+      <div class="form-group">
+        <label for="email">Número guía:</label>
+        <input type="text" class="form-control"  name="numero_guia">
+      </div>
+      <button type="submit" class="btn btn-light">Consultar</button>
+    </form>
+  </div>
+
+
+{% endblock%}

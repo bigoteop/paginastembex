@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% if g.upload_errors != 0 and g.upload_errors != 3 %}
+<div class="container" style="font-size: 12px;">
+<div class="row" style="padding-bottom: 30px;">
+    <div class="col">
+        NAVE
+    </div>
+    <div class="col">
+        PUERTO
+    </div>
+    <div class="col">
+        DESTINO
+    </div>
+    <div class="col">
+        N GUIA
+    </div>
+    <div class="col">
+        CONTENEDOR
+    </div>
+    <div class="col">
+        N PALLET
+    </div>
+    <div class="col">
+        CAJAS
+    </div>
+    <div class="col">
+        ESPECIE
+    </div>
+    <div class="col">
+        VARIEDAD
+    </div>
+    <div class="col">
+        EMBALAJE
+    </div>
+    <div class="col">
+        CHOFER
+    </div>
+    <div class="col">
+        N_CHOFER
+    </div>
+</div>
+{% endif %}
+
+
+
+{% for line in g.file_content%}
+    <div class="row">   
+    {% for code in line.split(",")%}
+    {% if code == 'NOT FOUND'%}
+    <div class="col" style="background-color:crimson;">
+         {{code}}
+    </div>
+    {%else%}
+    <div class="col" >    
+        {{code}}
+    </div>
+    {% endif %}
+    {%endfor%}
+    </div>
+{%endfor%}
+</div>
+
+{% if g.upload_errors == 2 %}
+<!-- Errores en el archivo, no se puede subir-->
+<div class="alert alert-danger" role="alert">
+    El archivo tiene errores, no puede ser subido al sistema.
+</div>
+{% elif g.upload_errors == 1 %}
+<!-- El archivo no tiene errores -->
+<div class="container">
+    <form method="POST">
+        <button type="submit" name="upload" value="Subir" >Subir</button>
+    </form>
+</div>
+{% elif g.upload_errors == 3 %}
+<!-- El archivo no tiene errores -->
+<div class="alert alert-success" role="alert">
+    El archivo se ha cargado correctamente.
+</div>
+
+
+
+
+{% else %}
+
+
+
+
+<div class="container">
+<h2>Seleccione un archivo para subir:</h2>
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="filename" accept=".txt">
+    <input type="submit" value="Subir">
+  </form>
+
+</div>
+
+{% endif %}
+
+{% endblock%}
