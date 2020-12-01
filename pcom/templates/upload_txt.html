@@ -80,7 +80,6 @@
     {% for code in line.split(",")%}
     
     {% if code == 'NOT FOUND'%}
-    <th>
     <td style="background-color:crimson;">
          {{code}}
     </td>
@@ -90,7 +89,6 @@
     </td>
 
     {% endif %}
-</th>
     {%endfor%}
     </div>
 </tr>
