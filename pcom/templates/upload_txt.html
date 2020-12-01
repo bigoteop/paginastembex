@@ -4,6 +4,8 @@
 
 {% if g.upload_errors != 0 and g.upload_errors != 3 %}
 <div class="container" style="font-size: 12px;">
+<ul>
+    <li>
 <div class="row" style="padding-bottom: 30px;">
     <div class="col">
         NAVE
@@ -42,11 +44,13 @@
         N_CHOFER
     </div>
 </div>
+</li>
 {% endif %}
 
 
 
 {% for line in g.file_content%}
+<li>
     <div class="row">   
     {% for code in line.split(",")%}
     {% if code == 'NOT FOUND'%}
@@ -60,9 +64,11 @@
     {% endif %}
     {%endfor%}
     </div>
+</li>
 {%endfor%}
 </div>
 
+</ul>
 {% if g.upload_errors == 2 %}
 <!-- Errores en el archivo, no se puede subir-->
 <div class="alert alert-danger" role="alert">
