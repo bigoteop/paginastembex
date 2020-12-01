@@ -238,7 +238,11 @@ def resumen_embarque():
     if request.method == 'POST':
         g.show_resumen = True
         if request.form['nombre_nave'] in contenedores_embarcados.keys():
-            g.nave= contenedores_embarcados[request.form['nombre_nave']]
+            data = []
+            for i in guias:
+                if i.contenedor in contenedores_embarcados[request.form['nombre_nave']]:
+                    data.append("{},{},{},{},{}".format(i.numero,i.contenedor,i.especie,i.cajas,i.pallets))
+            g.nave= data
             g.nave_nombre = request.form['nombre_nave'] 
         else:
              g.nave = None

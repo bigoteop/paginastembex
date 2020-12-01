@@ -6,11 +6,26 @@
 {% block content %}
 <div class="container">
 {% if g.nave %}
-<h2>Resumen de embarque para la nave: {{g.nave_nombre}}</h2>
+  <h3>Resumen de embarque para la nave: {{g.nave_nombre}}</h2>
+  <table>
+    <tr>
+      <th style="padding: 10px;">Número Guía</th>
+      <th style="padding: 10px;">Contenedor</th>
+      <th style="padding: 10px;">Especie</th>
+      <th style="padding: 10px;">Cajas</th>
+      <th style="padding: 10px;">Pallets</th>
+    </tr>
   {% for i in g.nave %}
-      <p>{{i}}</p>
+    <tr>
+      {% for value in i.split(",") %}
+        <td style="padding: 10px;">{{value}}</td>
+      {% endfor %}
+    </tr>
   {% endfor %}
 
+
+
+  </table>
 {% elif g.show_resumen %}
 <div class="alert alert-danger" role="alert">
   La nave ingresada no existe
