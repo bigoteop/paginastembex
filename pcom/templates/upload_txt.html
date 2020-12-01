@@ -78,15 +78,16 @@
     <div class="row">   
     
     {% for code in line.split(",")%}
-    <th>
+    
     {% if code == 'NOT FOUND'%}
-    <div class="col" style="background-color:crimson;">
+    <th>
+    <td style="background-color:crimson;">
          {{code}}
-    </div>
+    </td>
     {%else%}
-    <div class="col" >    
+    <td>  
         {{code}}
-    </div>
+    </td>
 
     {% endif %}
 </th>
