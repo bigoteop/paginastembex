@@ -4,81 +4,55 @@
 
 {% if g.upload_errors != 0 and g.upload_errors != 3 %}
 <div class="container" style="font-size: 12px;">
-<table>
-    <tr>
+<ul>
+    <li>
 <div class="row" style="padding-bottom: 30px;">
-    <th>
     <div class="col">
         NAVE
     </div>
-</th>
-<th>
     <div class="col">
         PUERTO
     </div>
-</th>
-<th>
     <div class="col">
         DESTINO
     </div>
-</th>
-<th>
     <div class="col">
         N GUIA
     </div>
-</th>
-<th>
     <div class="col">
         CONTENEDOR
     </div>
-</th>
-<th>
     <div class="col">
         N PALLET
     </div>
-</th>
-<th>
     <div class="col">
         CAJAS
     </div>
-</th>
-<th>
     <div class="col">
         ESPECIE
     </div>
-</th>
-<th>
     <div class="col">
         VARIEDAD
     </div>
-</th>
-<th>
     <div class="col">
         EMBALAJE
     </div>
-</th>
-<th>
     <div class="col">
         CHOFER
     </div>
-</th>
-<th>
     <div class="col">
         N_CHOFER
     </div>
-</th>
 </div>
-</tr>
+</li>
 {% endif %}
 
 
 
 {% for line in g.file_content%}
-<tr>
+<li>
     <div class="row">   
-    
     {% for code in line.split(",")%}
-    <th>
     {% if code == 'NOT FOUND'%}
     <div class="col" style="background-color:crimson;">
          {{code}}
@@ -87,16 +61,14 @@
     <div class="col" >    
         {{code}}
     </div>
-
     {% endif %}
-</th>
     {%endfor%}
     </div>
-</tr>
+</li>
 {%endfor%}
 </div>
 
-</table>
+</ul>
 {% if g.upload_errors == 2 %}
 <!-- Errores en el archivo, no se puede subir-->
 <div class="alert alert-danger" role="alert">

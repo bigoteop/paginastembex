@@ -283,7 +283,7 @@ def txt_upload():
             file_content = []
             
             uploaded_file_filename=filename
-            for line in open(app.config['UPLOAD_FOLDER']+filename,"r"):
+            for line in open(app.config['UPLOAD_FOLDER']+filename,"r",encoding="UTF-8"):
                 
                 translated_line = ""
                 stripped_line = line.strip("\n")
@@ -330,7 +330,7 @@ def txt_upload():
                 
             g.file_content = file_content
         else:
-            for line in open(app.config['UPLOAD_FOLDER']+uploaded_file_filename,"r"):
+            for line in open(app.config['UPLOAD_FOLDER']+uploaded_file_filename,"r", encoding="UTF-8"):
                 data = line.split(",")
                 found = False
                 for i in guias:
