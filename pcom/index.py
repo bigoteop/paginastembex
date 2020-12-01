@@ -159,6 +159,13 @@ def tablas_emb():
         return redirect(url_for('login'))
 
     if request.method == 'POST':
+        for i in embalajes:
+            if i.cod == request.form['ce_codigo']:
+                i.net = request.form['ce_pneto']
+                i.bru = request.form['ce_pbruto']
+                i.tip = request.form['ce_tipo']
+                return render_template("tablas_emb.html")
+
         embalajes.append(Emb(request.form['ce_codigo'],request.form['ce_pneto'],request.form['ce_pbruto'],request.form['ce_tipo']))
     
     return render_template("tablas_emb.html")
@@ -169,6 +176,11 @@ def tablas_var():
         return redirect(url_for('login'))
 
     if request.method == 'POST':
+        for i in variedades:
+            if i.cod == int(request.form['var_code']):
+                i.nombre = request.form['var_name']
+                return render_template("tablas_var.html")
+
         variedades.append(Var(int(request.form['var_code']),request.form['var_name']))
     
     return render_template("tablas_var.html")
@@ -179,6 +191,11 @@ def tablas_esp():
         return redirect(url_for('login'))
 
     if request.method == 'POST':
+        for i in especies:
+            if i.cod == request.form['esp_code']:
+                i.nombre = request.form['esp_name']
+                return render_template("tablas_esp.html")
+
         especies.append(Var(request.form['esp_code'],request.form['esp_name']))
     
     return render_template("tablas_esp.html")
